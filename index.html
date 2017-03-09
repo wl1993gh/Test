@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+   	<script>
+   		(function(){
+   			var html=document.documentElement;
+   			var hWidth=html.getBoundingClientRect().width;
+   			html.style=hWidth/16+'px';
+   		})()
+   	</script>
+   	<script>
+   	$(document).ready(function(){
+   		$(".glyphicon-heart-empty").each(function() {
+		var col=$(this).attr("color","#80858C");
+		var col1=$(this).attr("color","#5BAFFF");
+		$(this).click(function() {
+			if(col){
+				$(this).css("color","#5BAFFF");
+				var num = $(this).next().text();
+				var num1=parseInt(num)+1;
+				$(this).next().html(num1);
+				col = false;
+			}else{
+				var num = $(this).next().text();
+				var num1=parseInt(num)-1;
+				$(this).next().html(num1);
+				$(this).css("color","#80858C");
+				col = true;
+			}
+			
+		});
+		
+	});	
+	$(".glyphicon-trash").each(function(){
+		$(this).click(function() {
+			$(this).parents(".mess").hide();
+		});
+	});
+	$(".look").each(function(){
+		$(this).click(function() {
+			$(this).next(".hide").show();
+			$(this).hide();
+		});
+	});
+	$(".shou").each(function(){
+		$(this).click(function() {
+			$(this).parent().hide();
+			$(this).parent().siblings(".look").show();
+		});
+	})
+})
+   		
+   	</script>
+</head>
+<body>
+	<div class="warp">
+		<div class="head">
+			<div class="local">
+				<span>张小六</span>
+				<img src=""/>
+			</div>
+		</div>
+		<div class="main">
+			<div class="mess">
+				<div class="left">
+					<span><img src=""/></span>
+				</div>
+				<div class="right">
+					<div class="nickname"><span>张小六</span></div>
+					<div class="content">
+						<a href="index.html">
+							<div class="share">
+								<div class="imgs"><img src=""/></div><div class="text">滴滴，注册司机接单拿奖励，随时随地可接单，赢取高额奖励，轻松赚外快！</div>
+							</div>
+						</a>
+						<div class="icon">
+							<span class="glyphicon glyphicon-heart-empty"></span><span class="num">125</span>
+							<span class="glyphicon glyphicon-comment"></span>评论
+							<span class="glyphicon glyphicon-trash"></span>删除
+						</div>
+						<div class="time">13小时前</div>
+						<div class="comment">
+							<p><span>星星点灯</span>：每天上下班顺两单，一周下来节碳量相当于多种了两棵树，节能环保还能减少堵车！</p>
+							<p><span>至尊宝</span>：了解从未接触过的领域，比赚钱更让我心动的是收获。</p>
+							<p><span>野马</span>回复<span>至尊宝</span>：有内涵~</p>
+							<div class="look">查看全部14条评论<span class="glyphicon glyphicon-menu-down"></span></div>
+							<div class="hide">
+								<p><span>星星点灯</span>：每天上下班顺两单，一周下来节碳量相当于多种了两棵树，节能环保还能减少堵车！</p>
+								<p><span>至尊宝</span>：了解从未接触过的领域，比赚钱更让我心动的是收获。</p>
+								<div class="shou">收起<span class="glyphicon glyphicon-menu-up"></span></div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="mess">
+				<div class="left">
+					<span><img src=""/></span>
+				</div>
+				<div class="right">
+					<div class="nickname"><span>甲壳虫</span></div>
+					<div class="content">
+						<p>2017年1月，心之向往，记我的西藏行，历时16天，川进青出。</p>
+						<div class="picture">
+							<div class="first">
+								<div class="child"><img src=""/></div>
+								<div class="child"><img src=""/></div>
+							</div>
+							<div class="second">
+								<div class="child"><img src=""/></div>
+								<div class="child"><img src=""/></div>
+							</div>
+						</div>
+						<div class="icon">
+							<span class="glyphicon glyphicon-heart-empty"></span><span class="num">125</span>
+							<span class="glyphicon glyphicon-comment"></span>评论
+						</div>
+						<div class="time">2017-01-20 10:54</div>
+						
+					</div>
+					
+				</div>
+			</div>
+			
+		</div>
+		
+	</div>
+</body>
+</html>
